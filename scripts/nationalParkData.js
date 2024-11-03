@@ -6858,3 +6858,5 @@ const nationalParksArray = [
     }
     }
 ]
+
+nationalParksArray.sort((a,b) => a["LocationName"] > b["LocationName"])
