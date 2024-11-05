@@ -10,14 +10,27 @@ let loadSelectOptions = (array, selectElement) => {
   }
 };
 
+let addWebsite = (visit, park) => {
+  const anchor = document.createElement("a");
+  const url = park[visit] || `https://www.nps.gov/${park.LocationID.toLocaleLowerCase()}/index.htm`;
+  anchor.textContent = url;
+  anchor.href = url;
+  anchor.target = "_blank";
+  return anchor;
+};
+
 let loadParks = (nationalParks = nationalParksArray) => {
-  console.log(nationalParks[0])
   for (const park of nationalParks) {
     let row = document.createElement("tr");
+
     headers.forEach((header) => {
       let cell = document.createElement("td");
 
-      park[header.id] ? (cell.textContent = park[header.id]) : (cell.textContent = "N/A");
+      if (header.id == "Visit") {
+        cell.appendChild(addWebsite(header.id, park));
+      } else {
+        cell.textContent = park[header.id] || "N/A";
+      }
 
       row.appendChild(cell);
     });
@@ -32,7 +45,7 @@ loadParks();
 parkByStateSelect.addEventListener("change", (evt) => {
   parkByTypeSelect.value = "";
   tableBody.textContent = "";
-  const filteredNationalParks = nationalParksArray.filter((park) => evt.target.value == park.State)
+  const filteredNationalParks = nationalParksArray.filter((park) => evt.target.value == park.State);
 
   evt.target.value ? loadParks(filteredNationalParks) : loadParks();
 });
@@ -40,7 +53,7 @@ parkByStateSelect.addEventListener("change", (evt) => {
 parkByTypeSelect.addEventListener("change", (evt) => {
   parkByStateSelect.value = "";
   tableBody.textContent = "";
-  const filteredNationalParks = nationalParksArray.filter((park) => park.LocationName.includes(evt.target.value))
+  const filteredNationalParks = nationalParksArray.filter((park) => park.LocationName.includes(evt.target.value));
 
   evt.target.value ? loadParks(filteredNationalParks) : loadParks();
 });
