@@ -10,21 +10,17 @@ async function getSunsetForMountain(lat, lng) {
   return data;
 }
 
-function loadMountains(params) {
+function loadMountainSelect() {
   for (const mountain of mountainsArray) {
     const option = new Option(mountain.name, mountain.name);
     mountainSelect.appendChild(option);
-
-    if (params == mountain.name) params = mountain;
   }
-  if (params) createMountainDetails(params);
-  params ? (mountainDetails.style.display = "block") : (mountainDetails.style.display = "none");
 }
 
-let createMountainDetails = async (mountain) => {
+async function createMountainDetails(mountain) {
+  mountainDetails.style.display = "block";
   mountainImg.src = `images/${mountain.img}`;
   const time = await getSunsetForMountain(mountain.coords.lat, mountain.coords.lng);
-
   mountainBody.forEach((elem) => {
     switch (elem.id) {
       case "name":
@@ -47,11 +43,11 @@ let createMountainDetails = async (mountain) => {
         break;
     }
   });
-};
+}
+
+loadMountainSelect();
 
 mountainSelect.addEventListener("change", (evt) => {
-  evt.target.value ? loadMountains(evt.target.value) : mountainDetails.style.display = "none";
+  const mountain = mountainsArray.find((mtn) => evt.target.value == mtn.name);
+  evt.target.value ? createMountainDetails(mountain) : (mountainDetails.style.display = "none");
 });
-
-loadMountains();
-
