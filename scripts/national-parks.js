@@ -18,6 +18,7 @@ function addWebsite (visit, park) {
   anchor.textContent = "Visit Here";
   anchor.href = url;
   anchor.target = "_blank";
+  anchor.style.textDecoration = "none"
   return anchor;
 };
 
