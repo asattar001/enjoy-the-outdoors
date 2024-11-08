@@ -15,6 +15,7 @@
   </head>
 
   <body>
+    <!-- Navbar -->
     <header>
       <nav class="navbar py-3 px-4 d-flex justify-content-center">
         <ul class="d-flex gap-5 list-unstyled mb-0 py-1">
@@ -28,6 +29,7 @@
     <main class="container-md">
       <h1 class="title text-center fs-1 fw-bolder my-4">Mountains</h1>
 
+      <!-- Mountain Select -->
       <div class="d-flex justify-content-center">
         <div class="select-div py-3 px-5 bg-white rounded-4">
           <label class="me-2 fw-semibold" for="mountainSelect">Find Mountain:</label>
@@ -36,12 +38,17 @@
           </select>
         </div>
       </div>
+
+      <!-- Mountain Card -->
       <div class="card my-5 overflow-hidden rounded-4 border-0 bg-white" id="mountainDetails" style="display: none">
         <div class="row g-0">
+
+          <!--Mountain Image -->
           <div class="col-md-5">
             <img src="" class="img-fluid h-100 w-100 object-fit-cover" alt="" id="mountainImg" />
           </div>
 
+          <!-- Mountain Details -->
           <div class="col-md-7">
             <div class="card-body p-5">
               <h4 class="fs-1 fw-bold mb-4" id="name"></h4>
@@ -77,6 +84,7 @@
       </div>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-body-secondary" id="mountainFooter">
       <div class="container" style="padding-top: 6rem">
         <hr />
@@ -88,6 +96,7 @@
         </div>
       </div>
     </footer>
+    
     <script src="scripts/mountainData.js"></script>
     <script src="scripts/mountains.js"></script>
   </body>

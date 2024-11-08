@@ -10,9 +10,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Document</title>
+    <title>Home</title>
   </head>
   <body>
+    <!-- Navbar -->
     <header>
       <nav class="navbar py-3 px-4 d-flex justify-content-center">
         <ul class="d-flex gap-5 list-unstyled mb-0 py-1">
@@ -24,14 +25,17 @@
     </header>
 
     <main>
-      <!-- large img background -->
       <section class="position-relative overflow-hidden mb-5 d-flex">
+        
+        <!-- large img background -->
         <img
           class="w-100 object-fit-cover"
           style="height: 93vh"
           src="/images/home_imgs/banff-national-park-2880x1800-12366.jpg"
           alt=""
         />
+
+        <!-- Text Container -->
         <div
           class="container position-absolute bottom-0 rounded-end-3 text-white p-5 min-vw-100 d-flex justify-content-center mb-4"
         >
@@ -57,12 +61,15 @@
       </section>
 
       <section class="d-flex justify-content-evenly mb-5">
-        <div class="card overflow-hidden border-0" style="width: 30%">
+
+        <!-- Card 1 -->
+        <div class="card overflow-hidden border-0 card-width">
           <img
             src="./images/home_imgs/bellingrath-gardens-alabama-landscape-scenic158063.jpg"
             class="img-fluid h-100 w-100 object-fit-cover"
             alt=""
           />
+          <!-- Card 1 Text -->
           <div class="card-body">
             <h3 class="title">National Parks</h3>
             <p class="description">
@@ -74,12 +81,14 @@
           </div>
         </div>
 
-        <div class="card overflow-hidden border-0" style="width: 30%">
+        <!-- Card 2 -->
+        <div class="card overflow-hidden border-0 card-width">
           <img
             src="./images/home_imgs/4k-mountain-l3f04sogeaabr5h0.jpg"
             class="img-fluid h-100 w-100 object-fit-cover"
             alt=""
           />
+          <!-- Card 2 Text -->
           <div class="card-body">
             <h3 class="title">Mountains</h3>
             <p class="description">
@@ -91,8 +100,10 @@
           </div>
         </div>
 
-        <div class="card overflow-hidden border-0" style="width: 30%">
+        <!-- Card 3 -->
+        <div class="card overflow-hidden border-0 card-width">
           <img src="./images/home_imgs/7c.jpg" class="img-fluid h-100 w-100 object-fit-cover" alt="" />
+          <!-- Card 3 Text -->
           <div class="card-body">
             <h3 class="title">Wildlife Viewing</h3>
             <p class="description">
@@ -103,9 +114,11 @@
             <a href="/" class="btn btn-primary">Explore Now</a>
           </div>
         </div>
+
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-body-secondary">
       <div class="container" style="padding-top: 6rem">
         <hr />
@@ -117,5 +130,6 @@
         </div>
       </div>
     </footer>
+
   </body>
 </html>

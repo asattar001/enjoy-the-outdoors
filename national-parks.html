@@ -11,9 +11,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Document</title>
+    <title>National Parks</title>
   </head>
   <body>
+    <!-- Navbar -->
     <header>
       <nav class="navbar py-3 px-4 d-flex justify-content-center">
         <ul class="d-flex gap-5 list-unstyled mb-0 py-1">
@@ -26,29 +27,39 @@
 
     <main>
       <div>
+        <!-- Large Image -->
         <img
           class="object-fit-cover"
           style="height: 40vh; width: 100%"
           src="/images/home_imgs/glacier-banner.jpg"
           alt="img"
         />
-        <div class="container mb-5">
+
+        <!--Select Container -->
+        <div class="container mb-5 mt-3">
           <div class="select-div bg-white d-flex justify-content-around py-4 px-5 rounded-4">
+
+            <!-- Location Select -->
             <div class="d-flex flex-grow-1 align-items-center mx-2">
               <label class="me-2 fw-semibold" for="parkByStateSelect">Find by</label>
               <select class="text-center rounded-2 py-2 flex-grow-1" name="select" id="parkByStateSelect">
                 <option value="">Location...</option>
               </select>
             </div>
+
+            <!-- Park Type Select -->
             <div class="d-flex flex-grow-1 align-items-center mx-2">
               <label class="me-2 fw-semibold" for="parkByTypeSelect">Find by</label>
               <select class="text-center rounded-2 py-2 flex-grow-1" name="select" id="parkByTypeSelect">
                 <option value="">Park Type...</option>
               </select>
             </div>
+
           </div>
         </div>
       </div>
+
+      <!--Table -->
       <div class="container tableDiv p-0 rounded-3 overflow-hidden">
         <table class="table table-striped table-hover">
           <thead class="table-light" id="tableHead">
@@ -67,6 +78,7 @@
       </div>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-body-secondary">
       <div class="container" style="padding-top: 6rem">
         <hr />
@@ -78,6 +90,7 @@
         </div>
       </div>
     </footer>
+
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/nationalParkData.js"></script>

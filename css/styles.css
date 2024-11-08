@@ -1,11 +1,10 @@
 body {
   background-color: #f8f9fa;
-  /* min-height: 100vh; */
+
 }
 
 .navbar{
   background-color: #333;
-
 }
 
 #tableHead th {
@@ -22,6 +21,10 @@ body {
 
 .card , .tableDiv {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-width{
+  width: 30%;
 }
 
 #description, .description {
@@ -47,3 +50,4 @@ footer {
   position: fixed;
   min-width: 100%
 }
+
