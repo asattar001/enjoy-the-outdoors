@@ -1,4 +1,4 @@
-# National Parks Explorer
+# Capstone 2: Enjoy the Outdoors
 
 A dynamic website showcasing America's national parks and mountains. Built with HTML, CSS, and JavaScript, this interactive platform allows users to explore various parks and mountains while providing detailed information about each location.
 
