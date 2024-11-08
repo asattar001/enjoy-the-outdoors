@@ -3,6 +3,7 @@ const mountainSelect = document.querySelector("#mountainSelect");
 const mountainDetails = document.querySelector("#mountainDetails");
 const mountainImg = document.querySelector("#mountainImg");
 const mountainBody = document.querySelectorAll("h4,p");
+const mountainFooter = document.querySelector("#mountainFooter");
 
 async function getSunsetForMountain(lat, lng) {
   let response = await fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
@@ -17,8 +18,18 @@ function loadMountainSelect() {
   }
 }
 
+function toggleStyles(bool) {
+  if (bool) {
+    mountainDetails.style.display = "block";
+    mountainFooter.style.position = "static";
+  } else {
+    mountainDetails.style.display = "none";
+    mountainFooter.style.position = "fixed";
+  }
+}
+
 async function createMountainDetails(mountain) {
-  mountainDetails.style.display = "block";
+  toggleStyles(true);
   mountainImg.src = `images/${mountain.img}`;
   const time = await getSunsetForMountain(mountain.coords.lat, mountain.coords.lng);
   mountainBody.forEach((elem) => {
@@ -27,19 +38,19 @@ async function createMountainDetails(mountain) {
         elem.textContent = mountain.name;
         break;
       case "elevation":
-        elem.textContent = `Elevation: ${mountain.elevation} FT`;
+        elem.textContent = `${mountain.elevation} FT`;
         break;
       case "effort":
-        elem.textContent = `Effort: ${mountain.effort}`;
+        elem.textContent = mountain.effort;
         break;
       case "description":
-        elem.textContent = `Description: ${mountain.desc}`;
+        elem.textContent = mountain.desc;
         break;
       case "sunrise":
-        elem.textContent = `Sunrise: ${time.results.sunrise}`;
+        elem.textContent = `${time.results.sunrise.slice(0, time.results.sunrise.lastIndexOf(":"))} AM`;
         break;
       case "sunset":
-        elem.textContent = `Sunset: ${time.results.sunset}`;
+        elem.textContent = `${time.results.sunset.slice(0, time.results.sunset.lastIndexOf(":"))} PM`;
         break;
     }
   });
@@ -49,5 +60,5 @@ loadMountainSelect();
 
 mountainSelect.addEventListener("change", (evt) => {
   const mountain = mountainsArray.find((mtn) => evt.target.value == mtn.name);
-  evt.target.value ? createMountainDetails(mountain) : (mountainDetails.style.display = "none");
+  evt.target.value ? createMountainDetails(mountain) : toggleStyles(false);
 });

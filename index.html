@@ -9,83 +9,113 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Document</title>
   </head>
   <body>
-    <header class="mb-4">
-      <nav>
-        <a href="/"><img src="" alt="logo" /></a>
-        <a href="/">Home</a>
-        <a href="national-parks.html">National Parks</a>
-        <a href="mountains.html">Mountains</a>
+    <header>
+      <nav class="navbar py-3 px-4 d-flex justify-content-center">
+        <ul class="d-flex gap-5 list-unstyled mb-0 py-1">
+          <li class="nav-item fs-5"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item fs-5"><a class="nav-link text-white" href="national-parks.html">National Parks</a></li>
+          <li class="fs-5"><a class="nav-link text-white" href="mountains.html">Mountains</a></li>
+        </ul>
       </nav>
     </header>
 
     <main>
       <!-- large img background -->
-      <div>
+      <section class="position-relative overflow-hidden mb-5 d-flex">
         <img
-          class="w-100"
-          style="height: 90vh"
+          class="w-100 object-fit-cover"
+          style="height: 93vh"
           src="/images/home_imgs/banff-national-park-2880x1800-12366.jpg"
           alt=""
         />
-        <div>
-          <h1>Enjoy the Outdoors</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, quo!</p>
-
-          <div>
+        <div
+          class="container position-absolute bottom-0 rounded-end-3 text-white p-5 min-vw-100 d-flex justify-content-center mb-4"
+        >
+          <div class="w-25">
+            <h2>Enjoy the Outdoors</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda, nemo dolor blanditiis sunt,
-              debitis fugit maiores ipsa obcaecati modi harum libero itaque, eaque sed dolore! Asperiores omnis
-              laboriosam animi architecto! Maxime aliquid cupiditate in modi. Necessitatibus itaque aliquid doloribus
-              fugiat numquam quas qui cumque non cupiditate. Vel, minima quasi!
+              Experience the beauty and adventure of nature. Whether you're hiking through towering peaks, exploring
+              lush forests, or simply relaxing by a mountain lake, the outdoors offers endless opportunities for
+              discovery and relaxation.
             </p>
-            <button><a href="/national-parks.html">Explore Now</a></button>
+
+            <h1 class="mt-5">Reconnect with Nature</h1>
+            <p>
+              Step away from the hustle and bustle of everyday life and immerse yourself in the peace and serenity of
+              the natural world. Our national parks and mountain ranges offer the perfect opportunity to disconnect from
+              technology and reconnect with the beauty of the earth.
+            </p>
+            <div>
+              <a class="btn btn-light mt-4 rounded-2 px-4" href="/national-parks.html">Explore Now</a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- card1 -->
-      <div>
-        <div>
-          <h3>Visit National Parks</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At ducimus, nihil iusto quos voluptatem repellat
-            accusamus suscipit repudiandae? Odit corrupti aspernatur nostrum nam sunt ipsam vel molestiae in corporis
-            quibusdam?
-          </p>
-          <button><a href="national-parks.html">Visit Now</a></button>
-        </div>
-        <img src="" alt="national park">
-      </div>
-
-      <!-- card2 -->
-      <div>
-        <img src="" alt="mountain">
-        <div>
-            <h3>Explore Mountains</h3>
-            <p>
+      <section class="d-flex justify-content-evenly mb-5">
+        <div class="card overflow-hidden border-0" style="width: 30%">
+          <img
+            src="./images/home_imgs/bellingrath-gardens-alabama-landscape-scenic158063.jpg"
+            class="img-fluid h-100 w-100 object-fit-cover"
+            alt=""
+          />
+          <div class="card-body">
+            <h3 class="title">National Parks</h3>
+            <p class="description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. At ducimus, nihil iusto quos voluptatem repellat
               accusamus suscipit repudiandae? Odit corrupti aspernatur nostrum nam sunt ipsam vel molestiae in corporis
               quibusdam?
             </p>
-            <button><a href="mountains.html.html">Visit Now</a></button>
+            <a href="national-parks.html" class="btn btn-primary">Explore Now</a>
           </div>
-      </div>
+        </div>
 
-      <div>
-        <table>
-            
-        </table>
+        <div class="card overflow-hidden border-0" style="width: 30%">
+          <img
+            src="./images/home_imgs/4k-mountain-l3f04sogeaabr5h0.jpg"
+            class="img-fluid h-100 w-100 object-fit-cover"
+            alt=""
+          />
+          <div class="card-body">
+            <h3 class="title">Mountains</h3>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At ducimus, nihil iusto quos voluptatem repellat
+              accusamus suscipit repudiandae? Odit corrupti aspernatur nostrum nam sunt ipsam vel molestiae in corporis
+              quibusdam?
+            </p>
+            <a href="mountains.html" class="btn btn-primary">Explore Now</a>
+          </div>
+        </div>
 
-
-
-      </div>
-
-
+        <div class="card overflow-hidden border-0" style="width: 30%">
+          <img src="./images/home_imgs/7c.jpg" class="img-fluid h-100 w-100 object-fit-cover" alt="" />
+          <div class="card-body">
+            <h3 class="title">Wildlife Viewing</h3>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At ducimus, nihil iusto quos voluptatem repellat
+              accusamus suscipit repudiandae? Odit corrupti aspernatur nostrum nam sunt ipsam vel molestiae in corporis
+              quibusdam?
+            </p>
+            <a href="/" class="btn btn-primary">Explore Now</a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer></footer>
+    <footer class="bg-body-secondary">
+      <div class="container" style="padding-top: 6rem">
+        <hr />
+        <div class="d-inline-flex gap-3">
+          &copy;
+          <p>2024-2026</p>
+          <a href="">Privacy</a>
+          <a href="">Terms</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

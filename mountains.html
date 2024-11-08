@@ -5,45 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-  />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Mountains</title>
   </head>
+
   <body>
-    <header class="mb-4">
-      <nav>
-        <a href="/"><img src="" alt="logo" /></a>
-        <a href="/">Home</a>
-        <a href="national-parks.html">National Parks</a>
-        <a href="mountains.html">Mountains</a>
+    <header>
+      <nav class="navbar py-3 px-4 d-flex justify-content-center">
+        <ul class="d-flex gap-5 list-unstyled mb-0 py-1">
+          <li class="nav-item fs-5"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item fs-5"><a class="nav-link text-white" href="national-parks.html">National Parks</a></li>
+          <li class="fs-5"><a class="nav-link text-white" href="mountains.html">Mountains</a></li>
+        </ul>
       </nav>
     </header>
 
-    <main>
-      <h1 class="text-center">Mountains</h1>
-      <div class="d-flex justify-content-center mb-4">
-        <label class="me-2" for="mountainSelect">Find Mountain:</label>
-        <select name="" id="mountainSelect">
-          <option value="">Select...</option>
-        </select>
-      </div>
+    <main class="container-md">
+      <h1 class="title text-center fs-1 fw-bolder my-4">Mountains</h1>
+
       <div class="d-flex justify-content-center">
-        <div class="card" style="width: 30rem; display:none;" id="mountainDetails">
-          <img src="" class="card-img-top" alt="" id="mountainImg">
-          <div class="card-body">
-            <h4 id="name"></h4>
-            <p id="elevation"></p>
-            <p id="effort"></p>
-            <p id="description"></p>
-            <p id="sunrise"></p>
-            <p id="sunset"></p>
+        <div class="select-div py-3 px-5 bg-white rounded-4">
+          <label class="me-2 fw-semibold" for="mountainSelect">Find Mountain:</label>
+          <select class="text-center rounded-2 py-2" id="mountainSelect">
+            <option value="">Select...</option>
+          </select>
+        </div>
+      </div>
+      <div class="card my-5 overflow-hidden rounded-4 border-0 bg-white" id="mountainDetails" style="display: none">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="" class="img-fluid h-100 w-100 object-fit-cover" alt="" id="mountainImg" />
+          </div>
+
+          <div class="col-md-7">
+            <div class="card-body p-5">
+              <h4 class="fs-1 fw-bold mb-4" id="name"></h4>
+
+              <div class="d-flex text-center bg-body-tertiary rounded-3 justify-content-around align-items-center">
+                <div class="mt-4 mb-1">
+                  <div>
+                    <p class="card-body-label text-uppercase mb-2">Elevation</p>
+                    <p class="card-body-value fw-semibold" id="elevation"></p>
+                  </div>
+                  <div>
+                    <p class="card-body-label text-uppercase mb-2">Sunrise</p>
+                    <p class="card-body-value fw-semibold" id="sunrise"></p>
+                  </div>
+                </div>
+
+                <div class="my-4 mb-1">
+                  <div>
+                    <p class="card-body-label text-uppercase mb-2">Effort Level</p>
+                    <p class="card-body-value fw-semibold" id="effort"></p>
+                  </div>
+                  <div>
+                    <p class="card-body-label text-uppercase mb-2">Sunset</p>
+                    <p class="card-body-value fw-semibold" id="sunset"></p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="mt-4 fs-5 lh-base" id="description"></p>
+            </div>
           </div>
         </div>
       </div>
     </main>
+
+    <footer class="bg-body-secondary" id="mountainFooter">
+      <div class="container" style="padding-top: 6rem">
+        <hr />
+        <div class="d-inline-flex gap-3">
+          &copy;
+          <p>2024-2026 The Store</p>
+          <a href="">Privacy</a>
+          <a href="">Terms</a>
+        </div>
+      </div>
+    </footer>
     <script src="scripts/mountainData.js"></script>
     <script src="scripts/mountains.js"></script>
   </body>

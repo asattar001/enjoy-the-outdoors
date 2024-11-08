@@ -1,0 +1,49 @@
+body {
+  background-color: #f8f9fa;
+  /* min-height: 100vh; */
+}
+
+.navbar{
+  background-color: #333;
+
+}
+
+#tableHead th {
+  padding: 1rem;
+}
+
+.title, #name, label {
+  color: #2c3e50;
+}
+
+.select-div {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card , .tableDiv {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#description, .description {
+  color: #444;
+}
+
+.card-body-label {
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.card-body-value {
+  font-size: 1.2rem;
+  color: #0056b3;
+}
+
+footer {
+  margin-top: 10rem;
+  bottom: 0;
+}
+
+#mountainFooter {
+  position: fixed;
+  min-width: 100%
+}
