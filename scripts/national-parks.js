@@ -3,6 +3,7 @@ const tableBody = document.querySelector("#tableBody");
 const parkByStateSelect = document.querySelector("#parkByStateSelect");
 const parkByTypeSelect = document.querySelector("#parkByTypeSelect");
 
+// Populates dropdown based on location or type
 function loadSelectOptions (array, selectElement) {
   for (const item of array) {
     const option = new Option(item, item);
@@ -10,6 +11,7 @@ function loadSelectOptions (array, selectElement) {
   }
 };
 
+// Makes a link to visit park website
 function addWebsite (visit, park) {
   const anchor = document.createElement("a");
   const url = park[visit] || `https://www.nps.gov/${park.LocationID.toLocaleLowerCase()}/index.htm`;
@@ -19,6 +21,7 @@ function addWebsite (visit, park) {
   return anchor;
 };
 
+// Having both location and park type filter work simulatenously
 function filterArray(state, type) {
   tableBody.textContent = "";
   return nationalParksArray.filter((park) => {
@@ -28,6 +31,7 @@ function filterArray(state, type) {
   });
 }
 
+// Creates a table based on original / filtered data
 function loadParks(nationalParks = nationalParksArray) {
   for (const park of nationalParks) {
     let row = document.createElement("tr");
@@ -47,15 +51,17 @@ function loadParks(nationalParks = nationalParksArray) {
   }
 }
 
-
+// Initially loads dropdowns and park table
 loadSelectOptions(locationsArray, parkByStateSelect);
 loadSelectOptions(parkTypesArray, parkByTypeSelect);
 loadParks();
 
+// Reload table with filtered data
 parkByStateSelect.addEventListener("change", () =>
   loadParks(filterArray(parkByStateSelect.value, parkByTypeSelect.value))
 );
 
+// Reload table with filtered data
 parkByTypeSelect.addEventListener("change", () => {
   loadParks(filterArray(parkByStateSelect.value, parkByTypeSelect.value));
 });
