@@ -47,7 +47,7 @@ This project utilizes the Sunrise-Sunset API to provide accurate astronomical da
 
 ## Project Structure
 ```
-national-parks-explorer/
+enjoy-the-outdoors/
 ├── index.html
 ├── mountains.html
 ├── national-parks.html
